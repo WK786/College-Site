@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<!-- Declares HTML5 document type -->
+
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<!-- Supports all characters including special symbols -->
+
+<title>NIT Polytechnic College, Nagpur</title>
+<!-- Title shown on browser tab -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Makes the website responsive on mobile devices -->
+
+<!-- Importing Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* Universal selector
+Applies style to all elements */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+/* Body styling for entire page */
+body{
+background:#f4f7fb;
+color:#333;
+}
+
+/* ================= HEADER SECTION ================= */
+
+/* Header bar at top of page */
+header{
+background:linear-gradient(135deg,#002147,#004080);
+color:white;
+padding:15px 0;
+position:sticky; /* header sticks to top when scrolling */
+top:0;
+z-index:1000;
+box-shadow:0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Container keeps content centered */
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+/* College logo text */
+.logo{
+font-size:22px;
+font-weight:600;
+}
+
+/* Navigation bar layout */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+/* Navigation list */
+nav ul{
+list-style:none;
+display:flex;
+}
+
+/* Spacing between menu items */
+nav ul li{
+margin-left:25px;
+}
+
+/* Navigation links style */
+nav ul li a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:0.3s;
+}
+
+/* Hover effect on menu links */
+nav ul li a:hover{
+color:#ffcc00;
+}
+
+/* ================= HERO SECTION ================= */
+
+/* Hero section with background image */
+.hero{
+height:90vh; /* height = 90% of screen */
+background:url("NITimg.jpg") center/cover no-repeat;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+/* Overlay layer to make image lighter
+Used so text becomes more readable */
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background: rgba(255,255,255,0.5);
+z-index:1;
+}
+
+/* Text placed above overlay */
+.hero-content{
+position:relative;
+z-index:2;
+text-align:center;
+color:navy;
+}
+
+.hero-content p{
+font-size:18px;
+}
+
+/* ================= FEATURES SECTION ================= */
+
+/* Section describing college advantages */
+.features{
+padding:60px 0;
+text-align:center;
+}
+
+/* Section title */
+.features h2{
+margin-bottom:40px;
+font-size:30px;
+color:#002147;
+}
+
+/* Grid layout for cards */
+.card-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+/* Individual feature card */
+.card{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+/* Hover animation */
+.card:hover{
+transform:translateY(-8px);
+}
+
+/* Card title */
+.card h3{
+margin-bottom:15px;
+color:#004080;
+}
+
+/* ================= FOOTER ================= */
+
+/* Bottom section of website */
+footer{
+background:#002147;
+color:white;
+padding:20px 0;
+text-align:center;
+}
+
+/* ================= MOBILE RESPONSIVE DESIGN ================= */
+
+/* Media query activates when screen width < 768px */
+@media(max-width:768px){
+
+/* Hide navigation menu initially on mobile */
+nav ul{
+display:none;
+flex-direction:column;
+background:#002147;
+position:absolute;
+top:70px;
+right:0;
+width:200px;
+padding:15px;
+}
+
+/* When JS adds "show" class, menu becomes visible */
+nav ul.show{
+display:flex;
+}
+
+/* Mobile menu spacing */
+nav ul li{
+margin:10px 0;
+}
+
+/* Hamburger menu icon */
+.menu-toggle{
+display:block;
+cursor:pointer;
+font-size:24px;
+}
+
+/* Smaller heading for mobile */
+.hero-content h1{
+font-size:28px;
+}
+
+}
+
+/* Hide menu icon on desktop */
+.menu-toggle{
+display:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+<div class="container">
+<nav>
+
+<!-- Website logo / college name -->
+<div class="logo">NIT Polytechnic, Nagpur</div>
+
+<!-- Mobile hamburger menu icon
+When clicked it runs toggleMenu() JavaScript function -->
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<!-- Navigation links -->
+<ul id="navLinks">
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="admission.html">Admission</a></li>
+<li><a href="departments.html">Departments</a></li>
+<li><a href="placements.html">Placements</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+
+</nav>
+</div>
+</header>
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="hero">
+
+<div class="hero-content">
+<h1>WELCOME TO</h1>
+<h1>NIT POLYTECHNIC COLLEGE</h1>
+<p>Empowering students with technical excellence and industry-ready skills.</p>
+</div>
+
+</section>
+
+<!-- ================= FEATURES SECTION ================= -->
+
+<section class="features">
+
+<div class="container">
+
+<h2>Why Choose Us?</h2>
+
+<div class="card-container">
+
+<div class="card">
+<h3>Experienced Faculty</h3>
+<p>Highly qualified teaching staff with strong academic and industry experience.</p>
+</div>
+
+<div class="card">
+<h3>Modern Infrastructure</h3>
+<p>Well-equipped laboratories, smart classrooms and advanced computer labs.</p>
+</div>
+
+<div class="card">
+<h3>Placement Support</h3>
+<p>Dedicated training & placement cell providing excellent career opportunities.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+<p>© 2026 NIT Polytechnic College, Nagpur | All Rights Reserved</p>
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+/*
+toggleMenu() function
+Used for mobile navigation menu
+
+When user clicks the ☰ icon:
+1. JavaScript finds element with id "navLinks"
+2. It adds or removes the class "show"
+3. CSS then displays or hides the menu
+*/
+
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("show");
+}
+
+</script>
+
+</body>
+</html>
